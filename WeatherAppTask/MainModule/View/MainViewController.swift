@@ -7,17 +7,9 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
-    var viewModel: MainViewModel!
-        
-    init(viewModel: MainViewModel){
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
+final class MainViewController: BaseViewController<MainView> {
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var viewModel: MainViewModelProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
