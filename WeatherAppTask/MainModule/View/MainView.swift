@@ -49,12 +49,13 @@ extension MainView {
         textField.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 300, height: 40))
         }
+        //Button
         checkWeatherButton.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 250, height: 50))
             make.bottom.equalToSuperview().inset(150)
             make.centerX.equalToSuperview()
         }
-        
+        //StackView
         stackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
@@ -65,8 +66,9 @@ extension MainView {
     func configureUI() {
         checkWeatherButton.layer.cornerRadius = checkWeatherButton.frame.height / 2
         checkWeatherButton.layer.masksToBounds = true
-
     }
+    
+    
 }
 
 

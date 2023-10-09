@@ -9,11 +9,12 @@ import Foundation
 
 
 final class MainViewControllerBuilder {
-   public static func createMainViewController() -> MainViewController {
+    public static func createMainViewController() -> MainViewController {
         let view = MainView()
         let router = Router()
         let viewModel = MainViewModel(router: router)
         let vc = MainViewController(mainView: view)
+        vc.setViewModel(viewModel: viewModel)
         return vc
     }
     

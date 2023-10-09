@@ -9,13 +9,18 @@ import UIKit
 
 final class MainViewController: BaseViewController<MainView> {
     
-    var viewModel: MainViewModelProtocol!
+    private var viewModel: MainViewModelProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
 
 }
 
+extension MainViewController {
+    func setViewModel(viewModel: MainViewModelProtocol) {
+        self.viewModel = viewModel
+    }
+}

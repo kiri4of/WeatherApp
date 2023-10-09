@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct CurrentWeaterAPIModel: Decodable {
+    let temp_c: Double?
+    let feelslike_c: Double?
+    let humidity: Double?
+    let pressure_mb: Double?
+    let icon: String?
+}
+
