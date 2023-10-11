@@ -9,11 +9,13 @@ import Foundation
 
 
 final class MainViewControllerBuilder {
-    public static func createMainViewController() -> MainViewController {
+     static func createMainViewController() -> MainViewController {
         let view = MainView()
-        let router = Router()
-        let viewModel = MainViewModel(router: router)
+        let network = APIManger()
+        let viewModel = MainViewModel(network: network)
         let vc = MainViewController(mainView: view)
+        let router = MainSceneRouter(controller: vc)
+        vc.router = router
         vc.setViewModel(viewModel: viewModel)
         return vc
     }

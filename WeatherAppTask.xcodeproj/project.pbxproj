@@ -21,7 +21,9 @@
 		F74240132AD2FF0B00216384 /* TextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74240122AD2FF0B00216384 /* TextField + Extension.swift */; };
 		F74240152AD3007600216384 /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74240142AD3007600216384 /* StackView + Extension.swift */; };
 		F74240172AD3024700216384 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74240162AD3024700216384 /* BaseViewController.swift */; };
-		F742401D2AD37EB900216384 /* WeatherIconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F742401C2AD37EB900216384 /* WeatherIconManager.swift */; };
+		F74240202AD4402400216384 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F742401F2AD4402400216384 /* EndPoint.swift */; };
+		F74240252AD4439C00216384 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74240242AD4439C00216384 /* APIManager.swift */; };
+		F74240282AD45A9200216384 /* MainEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74240272AD45A9200216384 /* MainEndpoint.swift */; };
 		F782B7DA2AD2206D001C6C8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782B7D92AD2206D001C6C8F /* AppDelegate.swift */; };
 		F782B7DC2AD2206D001C6C8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782B7DB2AD2206D001C6C8F /* SceneDelegate.swift */; };
 		F782B7DE2AD2206D001C6C8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782B7DD2AD2206D001C6C8F /* MainViewController.swift */; };
@@ -42,7 +44,9 @@
 		F74240122AD2FF0B00216384 /* TextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField + Extension.swift"; sourceTree = "<group>"; };
 		F74240142AD3007600216384 /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
 		F74240162AD3024700216384 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		F742401C2AD37EB900216384 /* WeatherIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconManager.swift; sourceTree = "<group>"; };
+		F742401F2AD4402400216384 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		F74240242AD4439C00216384 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F74240272AD45A9200216384 /* MainEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEndpoint.swift; sourceTree = "<group>"; };
 		F782B7D62AD2206D001C6C8F /* WeatherAppTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherAppTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F782B7D92AD2206D001C6C8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F782B7DB2AD2206D001C6C8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,56 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		F742401E2AD4401400216384 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				F74240232AD4438000216384 /* APIManager */,
+				F74240212AD4436000216384 /* NetworkManager */,
+				F74240222AD4437000216384 /* Request */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		F74240212AD4436000216384 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				F74240062AD2E7FC00216384 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		F74240222AD4437000216384 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				F742401F2AD4402400216384 /* EndPoint.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		F74240232AD4438000216384 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				F74240242AD4439C00216384 /* APIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		F74240262AD45A7B00216384 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F74240272AD45A9200216384 /* MainEndpoint.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		F74240292AD6E26D00216384 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F782B7ED2AD2226A001C6C8F /* MainModule */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		F782B7CD2AD2206C001C6C8F = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +161,7 @@
 				F782B7DB2AD2206D001C6C8F /* SceneDelegate.swift */,
 				F7423FFC2AD2E4A300216384 /* Extensions */,
 				F782B7F22AD222DE001C6C8F /* Managers */,
-				F782B7ED2AD2226A001C6C8F /* MainModule */,
+				F74240292AD6E26D00216384 /* Screens */,
 				F782B7E22AD22070001C6C8F /* Assets.xcassets */,
 				F782B7E42AD22070001C6C8F /* LaunchScreen.storyboard */,
 				F782B7E72AD22070001C6C8F /* Info.plist */,
@@ -119,6 +173,7 @@
 		F782B7ED2AD2226A001C6C8F /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				F74240262AD45A7B00216384 /* Helper */,
 				F7423FFF2AD2E68C00216384 /* Router */,
 				F782B7F02AD222AA001C6C8F /* Model */,
 				F782B7EE2AD22275001C6C8F /* View */,
@@ -157,8 +212,7 @@
 		F782B7F22AD222DE001C6C8F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				F74240062AD2E7FC00216384 /* NetworkManager.swift */,
-				F742401C2AD37EB900216384 /* WeatherIconManager.swift */,
+				F742401E2AD4401400216384 /* HTTP */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -246,12 +300,14 @@
 				F74240032AD2E73F00216384 /* APIModel.swift in Sources */,
 				F7423FF92AD22AD200216384 /* MainViewModel.swift in Sources */,
 				F74240072AD2E7FC00216384 /* NetworkManager.swift in Sources */,
+				F74240202AD4402400216384 /* EndPoint.swift in Sources */,
 				F74240172AD3024700216384 /* BaseViewController.swift in Sources */,
 				F782B7DE2AD2206D001C6C8F /* MainViewController.swift in Sources */,
 				F7423FF72AD229C800216384 /* MainView.swift in Sources */,
 				F782B7DA2AD2206D001C6C8F /* AppDelegate.swift in Sources */,
-				F742401D2AD37EB900216384 /* WeatherIconManager.swift in Sources */,
 				F782B7DC2AD2206D001C6C8F /* SceneDelegate.swift in Sources */,
+				F74240282AD45A9200216384 /* MainEndpoint.swift in Sources */,
+				F74240252AD4439C00216384 /* APIManager.swift in Sources */,
 				F74240112AD2FEBC00216384 /* UILabel + Extension.swift in Sources */,
 				F7423FFE2AD2E62900216384 /* MainViewControllerBuilder.swift in Sources */,
 				F74240152AD3007600216384 /* StackView + Extension.swift in Sources */,

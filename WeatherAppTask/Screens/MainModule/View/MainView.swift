@@ -8,11 +8,17 @@
 import UIKit
 import SnapKit
 
+protocol SendCityDataDelegate: AnyObject {
+    func sendData(city: String)
+}
+
 class MainView: UIView {
     private var checkWeatherButton = UIButton(title: "Check Weather", color: .brown, titleColor: .white, type: .system)
-    private var textField = UITextField(placeholder: "Location")
-    private var infoLabel = UILabel(size: 27, text: "Enter location")
+    private var textField = UITextField(placeholder: "City")
+    private var infoLabel = UILabel(size: 27, text: "Enter the city")
     private var stackView = UIStackView()
+    
+    weak var delegate: SendCityDataDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +32,8 @@ class MainView: UIView {
     override func layoutSubviews() {
         configureUI()
     }
+    
+    
 }
 
 extension MainView {
@@ -66,8 +74,14 @@ extension MainView {
     func configureUI() {
         checkWeatherButton.layer.cornerRadius = checkWeatherButton.frame.height / 2
         checkWeatherButton.layer.masksToBounds = true
+        checkWeatherButton.addTarget(self, action: #selector(didTapCheckWeatherButton), for: .touchUpInside)
     }
     
+    //MARK: - Objc func
+    @objc func didTapCheckWeatherButton(){
+        guard let cityString = textField.text else { return }
+        delegate?.sendData(city: cityString)
+    }
     
 }
 
