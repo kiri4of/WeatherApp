@@ -8,17 +8,17 @@
 import UIKit
 import SnapKit
 
-protocol SendCityDataDelegate: AnyObject {
+protocol SendLocationDataDelegate: AnyObject {
     func sendData(city: String)
 }
 
 class MainView: UIView {
-    private var checkWeatherButton = UIButton(title: "Check Weather", color: .brown, titleColor: .white, type: .system)
-    private var textField = UITextField(placeholder: "City")
-    private var infoLabel = UILabel(size: 27, text: "Enter the city")
-    private var stackView = UIStackView()
+    private let checkWeatherButton = CustomButton(title: NSLocalizedString("weatherButton", comment: "Check weather"), bg: .brown)
+    private let textField = UITextField(placeholder: NSLocalizedString("locationTextField", comment: "Location"))
+    private let infoLabel = UILabel(text: NSLocalizedString("infoLabel", comment: "Enter location"), size: 46)
+    private let stackView = UIStackView()
     
-    weak var delegate: SendCityDataDelegate?
+    weak var delegate: SendLocationDataDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,29 +29,18 @@ class MainView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        configureUI()
-    }
-    
-    
+        
 }
 
 extension MainView {
     func setupViews() {
-        //StackView
         self.addSubview(stackView)
         self.addSubview(checkWeatherButton)
-        self.backgroundColor = .white
-        
         stackView.addArrangedSubviews(infoLabel,textField)
-        stackView.spacing = 40
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .center
-        
         //Label
+      
         infoLabel.snp.makeConstraints { make in
-            make.size.equalTo(CGSize(width: 300, height: 50))
+            make.leading.trailing.equalToSuperview()
         }
         //TextField
         textField.snp.makeConstraints { make in
@@ -69,11 +58,27 @@ extension MainView {
             make.centerY.equalToSuperview()
         }
        
+        configureUI()
+        
     }
     
     func configureUI() {
-        checkWeatherButton.layer.cornerRadius = checkWeatherButton.frame.height / 2
-        checkWeatherButton.layer.masksToBounds = true
+        backgroundColor = UIColor(patternImage: UIImage(named: "Wallpaper3")!)
+        //StackView
+        stackView.spacing = 40
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .center
+        
+        //Label
+        infoLabel.makeOutLine(oulineColor: .brown, foregroundColor: .white)
+        
+        //TextField
+       // textField.delegate = self
+        textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        //Button
+        checkWeatherButton.isEnabled = false
+        checkWeatherButton.alpha = 0.5
         checkWeatherButton.addTarget(self, action: #selector(didTapCheckWeatherButton), for: .touchUpInside)
     }
     
@@ -83,6 +88,15 @@ extension MainView {
         delegate?.sendData(city: cityString)
     }
     
+    @objc func textFieldDidChange() {
+        if let text = textField.text, text == "" {
+            checkWeatherButton.isEnabled = false
+            checkWeatherButton.alpha = 0.5
+        } else {
+            checkWeatherButton.isEnabled = true
+            checkWeatherButton.alpha = 1
+        }
+    }
+    
 }
-
 

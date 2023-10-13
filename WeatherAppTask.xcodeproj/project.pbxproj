@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F70371312AD769BF00142800 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70371302AD769BF00142800 /* WeatherViewController.swift */; };
+		F70371332AD76A0700142800 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70371322AD76A0700142800 /* WeatherViewModel.swift */; };
+		F70371352AD76A5600142800 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70371342AD76A5600142800 /* WeatherView.swift */; };
+		F70371372AD76D6C00142800 /* WeatherViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70371362AD76D6C00142800 /* WeatherViewControllerBuilder.swift */; };
+		F70371392AD873BC00142800 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70371382AD873BC00142800 /* CustomButton.swift */; };
+		F703713B2AD873E100142800 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F703713A2AD873E100142800 /* BaseButton.swift */; };
+		F70371412AD8B9C100142800 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F70371432AD8B9C100142800 /* Localizable.strings */; };
+		F70371472AD98E7500142800 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70371462AD98E7500142800 /* UserDefaultsManager.swift */; };
 		F7423FF72AD229C800216384 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7423FF62AD229C800216384 /* MainView.swift */; };
 		F7423FF92AD22AD200216384 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7423FF82AD22AD200216384 /* MainViewModel.swift */; };
 		F7423FFE2AD2E62900216384 /* MainViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7423FFD2AD2E62900216384 /* MainViewControllerBuilder.swift */; };
@@ -32,6 +40,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F70371302AD769BF00142800 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		F70371322AD76A0700142800 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		F70371342AD76A5600142800 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		F70371362AD76D6C00142800 /* WeatherViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewControllerBuilder.swift; sourceTree = "<group>"; };
+		F70371382AD873BC00142800 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		F703713A2AD873E100142800 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		F70371422AD8B9C100142800 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F70371442AD8BA0F00142800 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F70371462AD98E7500142800 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		F7423FF62AD229C800216384 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F7423FF82AD22AD200216384 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		F7423FFD2AD2E62900216384 /* MainViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerBuilder.swift; sourceTree = "<group>"; };
@@ -69,6 +86,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F703712D2AD7695A00142800 /* WeatherModule */ = {
+			isa = PBXGroup;
+			children = (
+				F703712F2AD7697F00142800 /* ViewModel */,
+				F703712E2AD7697300142800 /* View */,
+			);
+			path = WeatherModule;
+			sourceTree = "<group>";
+		};
+		F703712E2AD7697300142800 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F70371302AD769BF00142800 /* WeatherViewController.swift */,
+				F70371342AD76A5600142800 /* WeatherView.swift */,
+				F70371362AD76D6C00142800 /* WeatherViewControllerBuilder.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F703712F2AD7697F00142800 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F70371322AD76A0700142800 /* WeatherViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F703713C2AD8740700142800 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F703713D2AD8741100142800 /* UI */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F703713D2AD8741100142800 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F70371382AD873BC00142800 /* CustomButton.swift */,
+				F703713E2AD8745E00142800 /* Helper */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F703713E2AD8745E00142800 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F703713A2AD873E100142800 /* BaseButton.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		F70371452AD98E5B00142800 /* UserDefautlsManager */ = {
+			isa = PBXGroup;
+			children = (
+				F70371462AD98E7500142800 /* UserDefaultsManager.swift */,
+			);
+			path = UserDefautlsManager;
+			sourceTree = "<group>";
+		};
 		F7423FFC2AD2E4A300216384 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +210,7 @@
 		F74240292AD6E26D00216384 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F703712D2AD7695A00142800 /* WeatherModule */,
 				F782B7ED2AD2226A001C6C8F /* MainModule */,
 			);
 			path = Screens;
@@ -157,6 +235,8 @@
 		F782B7D82AD2206D001C6C8F /* WeatherAppTask */ = {
 			isa = PBXGroup;
 			children = (
+				F70371432AD8B9C100142800 /* Localizable.strings */,
+				F703713C2AD8740700142800 /* Common */,
 				F782B7D92AD2206D001C6C8F /* AppDelegate.swift */,
 				F782B7DB2AD2206D001C6C8F /* SceneDelegate.swift */,
 				F7423FFC2AD2E4A300216384 /* Extensions */,
@@ -212,6 +292,7 @@
 		F782B7F22AD222DE001C6C8F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				F70371452AD98E5B00142800 /* UserDefautlsManager */,
 				F742401E2AD4401400216384 /* HTTP */,
 			);
 			path = Managers;
@@ -263,6 +344,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = F782B7CD2AD2206C001C6C8F;
 			packageReferences = (
@@ -284,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F782B7E62AD22070001C6C8F /* LaunchScreen.storyboard in Resources */,
+				F70371412AD8B9C100142800 /* Localizable.strings in Resources */,
 				F782B7E32AD22070001C6C8F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,25 +383,41 @@
 				F74240032AD2E73F00216384 /* APIModel.swift in Sources */,
 				F7423FF92AD22AD200216384 /* MainViewModel.swift in Sources */,
 				F74240072AD2E7FC00216384 /* NetworkManager.swift in Sources */,
+				F70371332AD76A0700142800 /* WeatherViewModel.swift in Sources */,
 				F74240202AD4402400216384 /* EndPoint.swift in Sources */,
 				F74240172AD3024700216384 /* BaseViewController.swift in Sources */,
 				F782B7DE2AD2206D001C6C8F /* MainViewController.swift in Sources */,
 				F7423FF72AD229C800216384 /* MainView.swift in Sources */,
+				F703713B2AD873E100142800 /* BaseButton.swift in Sources */,
+				F70371472AD98E7500142800 /* UserDefaultsManager.swift in Sources */,
 				F782B7DA2AD2206D001C6C8F /* AppDelegate.swift in Sources */,
 				F782B7DC2AD2206D001C6C8F /* SceneDelegate.swift in Sources */,
+				F70371352AD76A5600142800 /* WeatherView.swift in Sources */,
 				F74240282AD45A9200216384 /* MainEndpoint.swift in Sources */,
 				F74240252AD4439C00216384 /* APIManager.swift in Sources */,
 				F74240112AD2FEBC00216384 /* UILabel + Extension.swift in Sources */,
+				F70371392AD873BC00142800 /* CustomButton.swift in Sources */,
+				F70371312AD769BF00142800 /* WeatherViewController.swift in Sources */,
 				F7423FFE2AD2E62900216384 /* MainViewControllerBuilder.swift in Sources */,
 				F74240152AD3007600216384 /* StackView + Extension.swift in Sources */,
 				F742400F2AD2FE9500216384 /* UIButton + Extension.swift in Sources */,
 				F74240132AD2FF0B00216384 /* TextField + Extension.swift in Sources */,
+				F70371372AD76D6C00142800 /* WeatherViewControllerBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		F70371432AD8B9C100142800 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F70371422AD8B9C100142800 /* en */,
+				F70371442AD8BA0F00142800 /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F782B7E42AD22070001C6C8F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -334,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -394,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

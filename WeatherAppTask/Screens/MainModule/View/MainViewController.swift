@@ -17,15 +17,14 @@ final class MainViewController: BaseViewController<MainView> {
         // Do any additional setup after loading the view.
         mainView.delegate = self
     }
-
+    
     func updateView() {
         viewModel.updateViewData = { [weak self] response in
             print(response)
             switch response {
             case .success(let currentWeatherAPImodel):
-                let uiModel = CurrentWeatherAPIEnum.CurrentWeatherUIModel(apiModel: currentWeatherAPImodel)
-                print(uiModel)
-               // self?.router?.pushToWeatherScreen(weatherUIModel: currentWeather) //UIModel
+                let currentWeatherUI = CurrentWeatherAPIEnum.CurrentWeatherUIModel(apiModel: currentWeatherAPImodel)
+                self?.router?.pushToWeatherScreen(weatherUIModel: currentWeatherUI)
             case .failure(let errorMessage):
                 self?.router?.showAlert(message: errorMessage)
             }
@@ -34,11 +33,12 @@ final class MainViewController: BaseViewController<MainView> {
     
 }
 
-extension MainViewController: SendCityDataDelegate {
+extension MainViewController: SendLocationDataDelegate {
     func sendData(city: String) {
         viewModel.getWeather(with: city)
         updateView()
     }
+    
     
 }
 

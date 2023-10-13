@@ -23,7 +23,7 @@ final class MainViewModel: MainViewModelProtocol {
     }
     
     func getWeather(with city: String) {
-        network.makeRequest(for: MainEndpoint.getCityWeather(city: city)) { [weak self] (result: ModelFromRequest) in
+        network.makeRequest(for: MainEndpoint.getCityWeather(city: city, lang: NSLocalizedString("responseLanguage", comment: "en"))) { [weak self] (result: ModelFromRequest) in
             guard let self = self else {return}
             switch result {
             case .success(let response):
@@ -36,7 +36,7 @@ final class MainViewModel: MainViewModelProtocol {
     
     func checkAPIError(apiError: APIError) {
         switch apiError {
-        case .clientError(let message):
+        case .clientError(_): // let message - is correct but in this case we always get when city is incorrect
             self.updateViewData?(.failure("City not found")) // When city incorrect
         case .serverError(let message):
             self.updateViewData?(.failure(message))

@@ -18,7 +18,8 @@ final class MainSceneRouter {
     }
     
     func pushToWeatherScreen(weatherUIModel: CurrentWeatherAPIEnum.CurrentWeatherUIModel) {
-      //  controller?.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
+        let weatherViewController = WeatherViewControllerBuilder.createWeatherViewController(weatherData: weatherUIModel)
+        controller?.navigationController?.pushViewController(weatherViewController, animated: true)
     }
     
     func showAlert(message: String) {

@@ -13,7 +13,7 @@ enum ApiKeyMain {
 }
 
 enum MainEndpoint {
-    case getCityWeather(city: String)
+    case getCityWeather(city: String, lang: String)
 }
 
 extension MainEndpoint: Endpoint {
@@ -41,8 +41,8 @@ extension MainEndpoint: Endpoint {
     
     var parameters: [String : Any]? {
         switch self {
-        case .getCityWeather(let city):
-            return ["key":"\(ApiKeyMain.key)", "q": city]
+        case .getCityWeather(let city, let lang):
+            return ["key":"\(ApiKeyMain.key)", "q": city, "lang": lang]
         }
     }
     
@@ -52,7 +52,6 @@ extension MainEndpoint: Endpoint {
             return URLEncoding.default
         }
     }
-    
     
 }
 

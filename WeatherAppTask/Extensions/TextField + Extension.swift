@@ -14,6 +14,7 @@ extension UITextField {
         self.placeholder = placeholder
         self.backgroundColor = UIColor.systemGray6
         self.layer.cornerRadius = 5
+        self.font = UIFont.systemFont(ofSize: 22)
     }
 }
 

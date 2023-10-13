@@ -14,5 +14,6 @@ extension UIButton {
         self.setTitle(title, for: .normal)
         self.backgroundColor = color
         self.setTitleColor(titleColor, for: .normal)
+        self.titleLabel?.font = UIFont(name: "Apple SD Gothic Neo Bold", size: 22)
     }
 }

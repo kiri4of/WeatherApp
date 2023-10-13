@@ -11,17 +11,23 @@ enum CurrentWeatherAPIEnum {
     case success(WeatherDataAPIModel)
     case failure(String)
     
-    struct CurrentWeatherUIModel {
-        let temperatureString: Double
-        let appearentTemperatureString: Double
-        let humidityString: Int
-        let pressureString: Double
-
+    struct CurrentWeatherUIModel: Encodable {
+        let temperature: Double
+        let humidity: Int
+        let pressure: Double
+        let wind_mph: Double
+        let cityName: String
+        let countryName: String
+        let weatherCondtion: String
+        
         init(apiModel: WeatherDataAPIModel) {
-        self.temperatureString = apiModel.current.temp_c ?? 0.0
-        self.appearentTemperatureString = apiModel.current.feelslike_c ?? 0.0
-        self.humidityString = apiModel.current.humidity ?? 0
-        self.pressureString = apiModel.current.pressure_mb ?? 0.0
+        self.temperature = apiModel.current.temp_c ?? 0.0
+        self.humidity = apiModel.current.humidity ?? 0
+        self.pressure = apiModel.current.pressure_mb ?? 0.0
+        self.wind_mph = apiModel.current.wind_mph ?? 0.0
+        self.cityName = apiModel.location.name ?? ""
+        self.countryName = apiModel.location.country ?? ""
+        self.weatherCondtion = apiModel.current.condition.text ?? ""
         }
     }
 }
