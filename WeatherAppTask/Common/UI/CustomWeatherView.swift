@@ -1,20 +1,20 @@
 //
-//  WeatherView.swift
+//  CustomWeatherView.swift
 //  WeatherAppTask
 //
-//  Created by Kiri4of on 12.10.2023.
+//  Created by Kiri4of on 13.10.2023.
 //
 
 import UIKit
 import SnapKit
 
-class WeatherView: UIView {
-    private let locationLabel = UILabel(size: 30, font: "Apple SD Gothic Neo")
-    private let temperatureLabel = UILabel(size: 76)
-    private let pressureLabel = UILabel(size: 22)
-    private let humidityLabel = UILabel(size: 22)
-    private let windLabel = UILabel(size: 22)
-    private let weatherCondtionLabel = UILabel(size: 26)
+class CustomWeatherView: UIView {
+    private let locationLabel = UILabel(size: 28, font: "Apple SD Gothic Neo")
+    private let temperatureLabel = UILabel(size: 34)
+    private let pressureLabel = UILabel(size: 20)
+    private let humidityLabel = UILabel(size: 20)
+    private let windLabel = UILabel(size: 20)
+    private let weatherCondtionLabel = UILabel(size: 24)
     
     private let pressureImageView = UIImageView()
     private let humidityImageView = UIImageView()
@@ -45,9 +45,8 @@ class WeatherView: UIView {
     
 }
 
-extension WeatherView {
-    private func setupViews() {
-        self.backgroundColor = UIColor(patternImage: UIImage(named: "GradientWallpaper3")!)
+extension CustomWeatherView {
+    func setupViews() {
         addSubview(locationLabel)
         addSubview(temperatureLabel)
         addSubview(generalStackView)
@@ -61,37 +60,37 @@ extension WeatherView {
             make.bottom.equalTo(temperatureLabel.snp.top)
             make.centerX.equalToSuperview()
         }
-        
+
         temperatureLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-100) 
+            make.centerY.equalToSuperview().offset(-66) 
         }
-        
+
         generalStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.equalTo(temperatureLabel.snp.bottom).offset(60)
+            make.top.equalTo(temperatureLabel.snp.bottom).offset(40)
         }
-        
+
         humidityImageView.snp.makeConstraints { make in
-            make.width.height.equalTo(35)
+            make.width.height.equalTo(23)
         }
+
         pressureImageView.snp.makeConstraints { make in
-            make.width.height.equalTo(35)
+            make.width.height.equalTo(23)
         }
+
         windImageView.snp.makeConstraints { make in
-            make.width.height.equalTo(35)
+            make.width.height.equalTo(23)
         }
-        
+
         locationLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.equalTo(generalStackView.snp.bottom).offset(20)
+            make.top.equalTo(generalStackView.snp.bottom).offset(13)
         }
-        
-        
         configureUI()
     }
     
-    private func configureUI() {
+    func configureUI() {
         //ImageViews
         humidityImageView.image = UIImage(systemName: "humidity")
         humidityImageView.tintColor = .white

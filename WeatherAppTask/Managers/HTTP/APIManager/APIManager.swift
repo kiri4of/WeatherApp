@@ -20,7 +20,7 @@ final class APIManger: APIManagerProtocol {
     
     func makeRequest<T: Decodable>(for endpoint: Endpoint, completion: @escaping (APIResult<T>) -> Void) {
         guard let request = endpoint.urlRequest else {
-            completion(.failure(APIError.networkError(message: "Request error")))
+            completion(.failure(APIError.networkError(message: NSLocalizedString("requestError", comment: "Request error"))))
             return
         }
         networkManager.sendRequest(request: request, completion: completion)

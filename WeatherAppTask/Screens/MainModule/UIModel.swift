@@ -8,10 +8,10 @@
 import UIKit
 
 enum CurrentWeatherAPIEnum {
-    case success(WeatherDataAPIModel)
+    case success(CurrentWeatherUIModel)
     case failure(String)
     
-    struct CurrentWeatherUIModel: Encodable {
+    struct CurrentWeatherUIModel: Codable {
         let temperature: Double
         let humidity: Int
         let pressure: Double

@@ -63,5 +63,17 @@ extension NetworkManager {
     }
 }
 
-
-
+extension APIError {
+    var displayMessage: String {
+        switch self {
+        case .clientError(_): // let message - is correct but in this case we always get when city is incorrect
+            return NSLocalizedString("cityNotFound", comment: "City not found") // When city incorrect //тут локу подправить
+        case .serverError(let message):
+            return message
+        case .unknownError(let message):
+            return message
+        case .networkError(let message):
+            return message
+        }
+    }
+}

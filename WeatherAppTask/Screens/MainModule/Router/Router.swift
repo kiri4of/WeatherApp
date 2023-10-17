@@ -6,8 +6,6 @@
 //
 
 import UIKit
-// только пуш по сути
-
 
 final class MainSceneRouter {
     
@@ -23,8 +21,8 @@ final class MainSceneRouter {
     }
     
     func showAlert(message: String) {
-        let ac = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Ok", style: .default))
+        let ac = UIAlertController(title: NSLocalizedString("errorAlert", comment: "Error") , message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: NSLocalizedString("okAction", comment: "Оk"), style: .default))
         controller?.present(ac, animated: true)
     }
 }

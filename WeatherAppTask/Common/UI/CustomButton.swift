@@ -17,6 +17,7 @@ final class CustomButton: BaseButton {
         self.bgColor = bg
         self.title = title
         super.init(frame: .zero)
+        configurate()
     }
     
     required init?(coder: NSCoder) {
@@ -25,7 +26,10 @@ final class CustomButton: BaseButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+       configurate()
+    }
+    
+    func configurate() {
         let cornerRadius = self.frame.height / 2
         setTitle(title, for: .normal)
         backgroundColor = bgColor

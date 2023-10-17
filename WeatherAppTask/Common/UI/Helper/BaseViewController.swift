@@ -8,7 +8,7 @@
 import UIKit
 
 class BaseViewController<View: UIView>: UIViewController {
-    let mainView: View!
+    let mainView: View
     
     init(mainView: View) {
         self.mainView = mainView

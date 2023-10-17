@@ -2,3 +2,7 @@
 "locationTextField" = "Location";
 "infoLabel" = "Enter location";
 "responseLanguage" = "en";
+"errorAlert" = "Error";
+"okAction" = "Ok";
+"cityNotFound" = "City not found";
+"requestError" = "Request error";

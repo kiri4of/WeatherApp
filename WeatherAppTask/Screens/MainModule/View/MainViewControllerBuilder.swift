@@ -12,11 +12,11 @@ final class MainViewControllerBuilder {
      static func createMainViewController() -> MainViewController {
         let view = MainView()
         let network = APIManger()
-        let viewModel = MainViewModel(network: network)
-        let vc = MainViewController(mainView: view)
+        let userDefaultsManager = UserDefaultsManager()
+        let viewModel = MainViewModel(network: network, userDefaultsManager: userDefaultsManager)
+        let vc = MainViewController(mainView: view, viewModel: viewModel)
         let router = MainSceneRouter(controller: vc)
         vc.router = router
-        vc.setViewModel(viewModel: viewModel)
         return vc
     }
     

@@ -9,42 +9,44 @@ import UIKit
 
 final class MainViewController: BaseViewController<MainView> {
     
-    private var viewModel: MainViewModelProtocol!
+    private var viewModel: MainViewModelProtocol
     var router: MainSceneRouter?
+    
+    init(mainView: MainView, viewModel: MainViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(mainView: mainView)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         mainView.delegate = self
+        setHandlers()
+        viewModel.viewDidLoad()
     }
     
-    func updateView() {
-        viewModel.updateViewData = { [weak self] response in
-            print(response)
-            switch response {
-            case .success(let currentWeatherAPImodel):
-                let currentWeatherUI = CurrentWeatherAPIEnum.CurrentWeatherUIModel(apiModel: currentWeatherAPImodel)
-                self?.router?.pushToWeatherScreen(weatherUIModel: currentWeatherUI)
-            case .failure(let errorMessage):
-                self?.router?.showAlert(message: errorMessage)
-            }
+    private func setHandlers() {
+    
+        viewModel.updateMainScreenWeatherViewData = { [weak self] weatherData in
+            self?.mainView.updateWeatherViewData(weatherData: weatherData)
+        }
+        
+        viewModel.pushWeatherData = { [weak self] currentWeatehrUIModel in
+            self?.router?.pushToWeatherScreen(weatherUIModel: currentWeatehrUIModel)
+        }
+        
+        viewModel.displayError = { [weak self] errorMessage in
+            self?.router?.showAlert(message: errorMessage)
         }
     }
-    
 }
 
 extension MainViewController: SendLocationDataDelegate {
     func sendData(city: String) {
-        viewModel.getWeather(with: city)
-        updateView()
-    }
-    
-    
-}
-
-extension MainViewController {
-    func setViewModel(viewModel: MainViewModelProtocol) {
-        self.viewModel = viewModel
+        viewModel.cityUpdated(city: city)
     }
 }
 

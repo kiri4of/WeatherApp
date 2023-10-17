@@ -13,10 +13,11 @@ protocol SendLocationDataDelegate: AnyObject {
 }
 
 class MainView: UIView {
-    private let checkWeatherButton = CustomButton(title: NSLocalizedString("weatherButton", comment: "Check weather"), bg: .brown)
+    private let checkWeatherButton = CustomButton(title: NSLocalizedString("weatherButton", comment: "Check weather"), bg: .black)
     private let textField = UITextField(placeholder: NSLocalizedString("locationTextField", comment: "Location"))
     private let infoLabel = UILabel(text: NSLocalizedString("infoLabel", comment: "Enter location"), size: 46)
     private let stackView = UIStackView()
+    private let customWeatherView = CustomWeatherView()
     
     weak var delegate: SendLocationDataDelegate?
     
@@ -29,16 +30,28 @@ class MainView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-        
+    func updateWeatherViewData(weatherData: CurrentWeatherAPIEnum.CurrentWeatherUIModel) {
+        customWeatherView.isHidden = false
+        customWeatherView.setWeatherData(weatherData: weatherData)
+    }
 }
 
 extension MainView {
-    func setupViews() {
-        self.addSubview(stackView)
-        self.addSubview(checkWeatherButton)
+    private func setupViews() {
+        addSubview(stackView)
+        addSubview(checkWeatherButton)
+        addSubview(customWeatherView)
+        
         stackView.addArrangedSubviews(infoLabel,textField)
+        
+        customWeatherView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalToSuperview().offset(80)
+            make.bottom.equalTo(infoLabel.snp.top).offset(-30)
+        }
+        
         //Label
-      
+        
         infoLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
         }
@@ -57,13 +70,14 @@ extension MainView {
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
         }
-       
+        
         configureUI()
         
     }
     
-    func configureUI() {
-        backgroundColor = UIColor(patternImage: UIImage(named: "Wallpaper3")!)
+   private func configureUI() {
+        customWeatherView.isHidden = true //will only work once, then it will be visible when you update the weather data
+        backgroundColor = UIColor(patternImage: UIImage(named: "blackGradient")!)
         //StackView
         stackView.spacing = 40
         stackView.axis = .vertical
@@ -71,31 +85,30 @@ extension MainView {
         stackView.alignment = .center
         
         //Label
-        infoLabel.makeOutLine(oulineColor: .brown, foregroundColor: .white)
+        infoLabel.makeOutLine(oulineColor: .white, foregroundColor: .black)
         
         //TextField
-       // textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        
         //Button
         checkWeatherButton.isEnabled = false
         checkWeatherButton.alpha = 0.5
         checkWeatherButton.addTarget(self, action: #selector(didTapCheckWeatherButton), for: .touchUpInside)
     }
     
+    
+    
     //MARK: - Objc func
-    @objc func didTapCheckWeatherButton(){
+    @objc private func didTapCheckWeatherButton(){
         guard let cityString = textField.text else { return }
         delegate?.sendData(city: cityString)
     }
     
-    @objc func textFieldDidChange() {
-        if let text = textField.text, text == "" {
-            checkWeatherButton.isEnabled = false
-            checkWeatherButton.alpha = 0.5
-        } else {
-            checkWeatherButton.isEnabled = true
-            checkWeatherButton.alpha = 1
-        }
+    @objc private func textFieldDidChange() {
+        guard let text = textField.text else {return}
+        let condition = text == ""
+        checkWeatherButton.isEnabled = !condition
+        checkWeatherButton.alpha = condition ? 0.5 : 1
     }
     
 }

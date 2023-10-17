@@ -9,10 +9,10 @@ import Foundation
 
 class WeatherViewControllerBuilder {
     static func createWeatherViewController(weatherData: CurrentWeatherAPIEnum.CurrentWeatherUIModel) -> WeatherViewContoller {
-        let view = WeatherView(weatherData: weatherData)
-        let viewModel = WeatherViewModel()
-        let vc = WeatherViewContoller(mainView: view)
-        vc.setViewModel(viewModel: viewModel)
+        let view = WeatherView()
+        let userDefaultsManager = UserDefaultsManager()
+        let viewModel = WeatherViewModel(userDefaultsManager: userDefaultsManager, weatherDataModel: weatherData)
+        let vc = WeatherViewContoller(mainView: view, viewModel: viewModel)
         return vc
     }
 }

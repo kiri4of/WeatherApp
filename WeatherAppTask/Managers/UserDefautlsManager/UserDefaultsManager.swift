@@ -6,24 +6,23 @@
 //
 
 import Foundation
+
 protocol UserDefaultsManagerProtocol {
-    func setValue(_ value: Any, forKey key: String)
-    func getValue(forKey key: String) -> Any?
+    func setValue<T>(_ value: T, forKey key: String)
+    func getValue<T>(forKey key: String) -> T?
     func removeValue(forKey key: String)
     func hasValue(forKey key: String) -> Bool
 }
 
 class UserDefaultsManager: UserDefaultsManagerProtocol  {
-    static let shared = UserDefaultsManager()
-
     private let userDefaults = UserDefaults.standard
 
-    func setValue(_ value: Any, forKey key: String) {
+    func setValue<T>(_ value: T, forKey key: String) {
         userDefaults.set(value, forKey: key)
     }
 
-    func getValue(forKey key: String) -> Any? {
-        return userDefaults.value(forKey: key)
+    func getValue<T>(forKey key: String) -> T? {
+        return userDefaults.value(forKey: key) as? T
     }
 
     func removeValue(forKey key: String) {
@@ -33,5 +32,13 @@ class UserDefaultsManager: UserDefaultsManagerProtocol  {
     func hasValue(forKey key: String) -> Bool {
         return userDefaults.object(forKey: key) != nil
     }
+    
+    enum UserDefaultsKeys: String {
+        case weatherData
+    }
 }
+
+
+
+
 

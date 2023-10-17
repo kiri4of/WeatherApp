@@ -8,43 +8,89 @@
 import Foundation
 
 protocol MainViewModelProtocol {
-    var updateViewData: ((CurrentWeatherAPIEnum) -> Void)? { get set }
-    func getWeather(with city: String)
+    var pushWeatherData: ((CurrentWeatherAPIEnum.CurrentWeatherUIModel) -> Void)? { get set }
+    var updateMainScreenWeatherViewData: ((CurrentWeatherAPIEnum.CurrentWeatherUIModel) -> Void)? {get set}
+    var displayError: ((String) -> Void)? { get set }
+    func cityUpdated(city: String)
+    func viewDidLoad()
 }
 
 final class MainViewModel: MainViewModelProtocol {
+    
     typealias ModelFromRequest = APIResult<WeatherDataAPIModel>
-    
-    var updateViewData: ((CurrentWeatherAPIEnum) -> Void)?
+    var updateMainScreenWeatherViewData: ((CurrentWeatherAPIEnum.CurrentWeatherUIModel) -> Void)? //update
+    var pushWeatherData: ((CurrentWeatherAPIEnum.CurrentWeatherUIModel) -> Void)? //for push
+    var displayError: ((String) -> Void)?
     private let network: APIManagerProtocol
+    private let userDefaultsManager: UserDefaultsManagerProtocol
     
-    init(network: APIManagerProtocol) {
+    
+    init(network: APIManagerProtocol, userDefaultsManager: UserDefaultsManagerProtocol) {
         self.network = network
+        self.userDefaultsManager = userDefaultsManager
+    }
+    //loads old data and updates
+    func viewDidLoad() {
+        updateCurrentState()
     }
     
-    func getWeather(with city: String) {
-        network.makeRequest(for: MainEndpoint.getCityWeather(city: city, lang: NSLocalizedString("responseLanguage", comment: "en"))) { [weak self] (result: ModelFromRequest) in
+    func updateCurrentState() {
+        guard let data = loadWeatherData() else { return }
+        updateMainScreenWeatherViewData?(data)
+        getWeather(city: data.cityName) { [weak self] weatherUIModel in
+            self?.updateMainScreenWeatherViewData?(weatherUIModel)
+        }
+    }
+    
+    func getWeather(city: String, completion: @escaping (CurrentWeatherAPIEnum.CurrentWeatherUIModel) -> Void) {
+        network.makeRequest(for: MainEndpoint.getCityWeather(city: city)) { [weak self] (result: ModelFromRequest) in
             guard let self = self else {return}
             switch result {
             case .success(let response):
-                self.updateViewData?(.success(response))
+                let uiModel = CurrentWeatherAPIEnum.CurrentWeatherUIModel(apiModel: response)
+                self.saveWeatherData(uiModel)
+                completion(uiModel)
             case .failure(let error):
                 self.checkAPIError(apiError: error)
             }
         }
     }
     
-    func checkAPIError(apiError: APIError) {
-        switch apiError {
-        case .clientError(_): // let message - is correct but in this case we always get when city is incorrect
-            self.updateViewData?(.failure("City not found")) // When city incorrect
-        case .serverError(let message):
-            self.updateViewData?(.failure(message))
-        case .unknownError(let message):
-            self.updateViewData?(.failure(message))
-        case .networkError(let message):
-            self.updateViewData?(.failure(message))
+    
+    func cityUpdated(city: String) {
+        getWeather(city: city) { [weak self] weatherUIModel in
+            self?.pushWeatherData?(weatherUIModel)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self?.updateMainScreenWeatherViewData?(weatherUIModel)
+            }
         }
     }
     
+    func saveWeatherData(_ data: CurrentWeatherAPIEnum.CurrentWeatherUIModel) {
+        do {
+            let encoder = JSONEncoder()
+            let encodedData = try encoder.encode(data)
+            userDefaultsManager.setValue(encodedData, forKey: "weatherData")
+        } catch {
+            print(error)
+        }
+    }
+    
+    func checkAPIError(apiError: APIError) {
+        displayError?(apiError.displayMessage)
+    }
+    
+    func loadWeatherData() -> CurrentWeatherAPIEnum.CurrentWeatherUIModel? {
+        if let encodedData: Data = userDefaultsManager.getValue(forKey: "weatherData") {
+            do {
+                let decoder = JSONDecoder()
+                let decodedData = try decoder.decode(CurrentWeatherAPIEnum.CurrentWeatherUIModel.self, from: encodedData)
+                return decodedData
+            } catch {
+                print(error)
+                return nil
+            }
+        }
+        return nil
+    }
 }
