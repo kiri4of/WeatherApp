@@ -1,0 +1,8 @@
+"weatherButton" = "Перевiрити погоду";
+"locationTextField" = "Локацiя";
+"infoLabel" = "Введiть локацiю";
+"responseLanguage" = "uk";
+"errorAlert" = "Помилка";
+"okAction" = "Ок";
+"cityNotFound" = "Місто не знайдено";
+"requestError" = "Помилка запиту";

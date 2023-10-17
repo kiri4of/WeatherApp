@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3FF7D576-A77D-48FE-AFDB-147D96E721BA"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0DA2FCF-A77A-43CE-8028-0C607916D702"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherAppTask/Common/UI/CustomWeatherView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "setWeatherData(weatherData:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D0DA2FCF-A77A-43CE-8028-0C607916D702 - 3d74b6a0403a1917"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.CustomWeatherView.setWeatherData(weatherData: WeatherAppTask.CurrentWeatherAPIEnum.CurrentWeatherUIModel) -&gt; ()"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Common/UI/CustomWeatherView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "185">
+               </Location>
+               <Location
+                  uuid = "D0DA2FCF-A77A-43CE-8028-0C607916D702 - 3d74b6a0403a1974"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.CustomWeatherView.setWeatherData(weatherData: WeatherAppTask.CurrentWeatherAPIEnum.CurrentWeatherUIModel) -&gt; ()"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Common/UI/CustomWeatherView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "185">
+               </Location>
+               <Location
+                  uuid = "D0DA2FCF-A77A-43CE-8028-0C607916D702 - 3d74b6a0403a18d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.CustomWeatherView.setWeatherData(weatherData: WeatherAppTask.CurrentWeatherAPIEnum.CurrentWeatherUIModel) -&gt; ()"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Common/UI/CustomWeatherView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "185">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "667F87BC-3D8D-48CD-859B-97F4B721B630"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherAppTask/Screens/MainModule/ViewModel/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "loadWeatherData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "667F87BC-3D8D-48CD-859B-97F4B721B630 - bd7ffb1cff0b9df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.MainViewModel.loadWeatherData() -&gt; Swift.Optional&lt;WeatherAppTask.CurrentWeatherAPIEnum.CurrentWeatherUIModel&gt;"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/MainModule/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "118">
+               </Location>
+               <Location
+                  uuid = "667F87BC-3D8D-48CD-859B-97F4B721B630 - bd7ffb1cff0bd1a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.MainViewModel.loadWeatherData() -&gt; Swift.Optional&lt;WeatherAppTask.CurrentWeatherAPIEnum.CurrentWeatherUIModel&gt;"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/MainModule/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "118">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64C14DBD-D139-4CEF-95EF-5CD12AD440EE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherAppTask/Screens/WeatherModule/View/WeatherView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "setWeatherData(weatherData:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "64C14DBD-D139-4CEF-95EF-5CD12AD440EE - fc733fef532ba6a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.WeatherView.setWeatherData(weatherData: WeatherAppTask.CurrentWeatherAPIEnum.CurrentWeatherUIModel) -&gt; ()"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/WeatherModule/View/WeatherView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "185">
+               </Location>
+               <Location
+                  uuid = "64C14DBD-D139-4CEF-95EF-5CD12AD440EE - fc733fef532ba5ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.WeatherView.setWeatherData(weatherData: WeatherAppTask.CurrentWeatherAPIEnum.CurrentWeatherUIModel) -&gt; ()"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/WeatherModule/View/WeatherView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "185">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9493AC93-DDCF-47DD-9BD7-94F363A0785D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherAppTask/Screens/WeatherModule/ViewModel/WeatherViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "init(userDefaultsManager:weatherDataModel:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9493AC93-DDCF-47DD-9BD7-94F363A0785D - 3caf93ee5036963"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.WeatherViewModel.init(userDefaultsManager: WeatherAppTask.UserDefaultsManager, weatherDataModel: WeatherAppTask.CurrentWeatherAPIEnum.CurrentWeatherUIModel) -&gt; WeatherAppTask.WeatherViewModel"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/WeatherModule/ViewModel/WeatherViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "142">
+               </Location>
+               <Location
+                  uuid = "9493AC93-DDCF-47DD-9BD7-94F363A0785D - 3caf93ee5036942"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.WeatherViewModel.init(userDefaultsManager: WeatherAppTask.UserDefaultsManager, weatherDataModel: WeatherAppTask.CurrentWeatherAPIEnum.CurrentWeatherUIModel) -&gt; WeatherAppTask.WeatherViewModel"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/WeatherModule/ViewModel/WeatherViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "142">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F84365DD-3C65-40FE-BEE3-510F6D2A60CF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherAppTask/Screens/WeatherModule/ViewModel/WeatherViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "updateUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F84365DD-3C65-40FE-BEE3-510F6D2A60CF - 45b44de7ee47eaa2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.WeatherViewModel.updateWeatherDataModel() -&gt; ()"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/WeatherModule/ViewModel/WeatherViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "F84365DD-3C65-40FE-BEE3-510F6D2A60CF - 9a5812c54774e86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.WeatherViewModel.updateUI() -&gt; ()"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/WeatherModule/ViewModel/WeatherViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0CAD815-168B-448F-A49F-4734DE54C3DC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherAppTask/Screens/MainModule/ViewModel/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "updateCurrentState()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A0CAD815-168B-448F-A49F-4734DE54C3DC - 39364a6a549c6fa4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.MainViewModel.updateCurrentState() -&gt; ()"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/MainModule/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "46">
+               </Location>
+               <Location
+                  uuid = "A0CAD815-168B-448F-A49F-4734DE54C3DC - 39364a6a549c6fa4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.MainViewModel.updateCurrentState() -&gt; ()"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/MainModule/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D23E66EA-9262-4B9C-A1C7-623B67CA3816"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherAppTask/Screens/MainModule/View/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "setHandlers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D23E66EA-9262-4B9C-A1C7-623B67CA3816 - 83fd6e6b03ec699"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.MainViewController.setHandlers() -&gt; ()"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/MainModule/View/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "75">
+               </Location>
+               <Location
+                  uuid = "D23E66EA-9262-4B9C-A1C7-623B67CA3816 - e0db9479e4db84d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (WeatherAppTask.CurrentWeatherAPIEnum.CurrentWeatherUIModel) -&gt; () in WeatherAppTask.MainViewController.setHandlers() -&gt; ()"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/MainModule/View/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "62">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5DD4DA56-9D79-4558-A392-D45C8DC5E362"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherAppTask/Screens/MainModule/ViewModel/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getWeather(city:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5DD4DA56-9D79-4558-A392-D45C8DC5E362 - 591c7f0466f93cd3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherAppTask.MainViewModel.getWeather(city: Swift.String, completion: (WeatherAppTask.CurrentWeatherAPIEnum.CurrentWeatherUIModel) -&gt; ()) -&gt; ()"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/MainModule/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "97">
+               </Location>
+               <Location
+                  uuid = "5DD4DA56-9D79-4558-A392-D45C8DC5E362 - f98c9535e48f706f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (WeatherAppTask.APIResult&lt;WeatherAppTask.WeatherDataAPIModel&gt;) -&gt; () in WeatherAppTask.MainViewModel.getWeather(city: Swift.String, completion: (WeatherAppTask.CurrentWeatherAPIEnum.CurrentWeatherUIModel) -&gt; ()) -&gt; ()"
+                  moduleName = "WeatherAppTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Learning%20SWIFT/WeatherAppTask/WeatherAppTask/Screens/MainModule/ViewModel/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "473">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D1503CA-9A01-4BF4-A099-540D32F0BF65"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherAppTask/Screens/MainModule/ViewModel/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "getWeather(city:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BCE74C05-1965-4161-B72A-EF82C1726420"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherAppTask/Screens/MainModule/ViewModel/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "updateCurrentState()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DB8D0D9-D594-4813-91DB-F31EB041C295"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherAppTask/Screens/MainModule/ViewModel/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "cityUpdated(city:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
