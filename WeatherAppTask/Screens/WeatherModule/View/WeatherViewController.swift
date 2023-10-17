@@ -25,7 +25,7 @@ class WeatherViewContoller: BaseViewController<WeatherView> {
         viewModel.viewDidLoad()
     }
     
-    func setHandlers() {
+   private func setHandlers() {
         viewModel.updateWeatherScreenViewData = { [weak self] weatherData in
             self?.mainView.setWeatherData(weatherData: weatherData)
         }

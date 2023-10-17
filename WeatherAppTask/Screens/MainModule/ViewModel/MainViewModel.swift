@@ -34,7 +34,7 @@ final class MainViewModel: MainViewModelProtocol {
         updateCurrentState()
     }
     
-    func updateCurrentState() {
+   private func updateCurrentState() {
         guard let data = loadWeatherData() else { return }
         updateMainScreenWeatherViewData?(data)
         getWeather(city: data.cityName) { [weak self] weatherUIModel in
@@ -42,7 +42,7 @@ final class MainViewModel: MainViewModelProtocol {
         }
     }
     
-    func getWeather(city: String, completion: @escaping (CurrentWeatherAPIEnum.CurrentWeatherUIModel) -> Void) {
+   private func getWeather(city: String, completion: @escaping (CurrentWeatherAPIEnum.CurrentWeatherUIModel) -> Void) {
         network.makeRequest(for: MainEndpoint.getCityWeather(city: city)) { [weak self] (result: ModelFromRequest) in
             guard let self = self else {return}
             switch result {
@@ -66,7 +66,7 @@ final class MainViewModel: MainViewModelProtocol {
         }
     }
     
-    func saveWeatherData(_ data: CurrentWeatherAPIEnum.CurrentWeatherUIModel) {
+   private func saveWeatherData(_ data: CurrentWeatherAPIEnum.CurrentWeatherUIModel) {
         do {
             let encoder = JSONEncoder()
             let encodedData = try encoder.encode(data)
@@ -76,11 +76,11 @@ final class MainViewModel: MainViewModelProtocol {
         }
     }
     
-    func checkAPIError(apiError: APIError) {
+   private func checkAPIError(apiError: APIError) {
         displayError?(apiError.displayMessage)
     }
     
-    func loadWeatherData() -> CurrentWeatherAPIEnum.CurrentWeatherUIModel? {
+   private func loadWeatherData() -> CurrentWeatherAPIEnum.CurrentWeatherUIModel? {
         if let encodedData: Data = userDefaultsManager.getValue(forKey: "weatherData") {
             do {
                 let decoder = JSONDecoder()

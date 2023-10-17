@@ -27,7 +27,7 @@ class WeatherViewModel: WeatherViewModelProtocol {
         updateUI()
     }
     
-    func updateUI() {
+   private func updateUI() {
         updateWeatherScreenViewData?(weatherDataModel)
     }
     

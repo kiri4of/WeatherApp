@@ -29,7 +29,7 @@ final class CustomButton: BaseButton {
        configurate()
     }
     
-    func configurate() {
+   private func configurate() {
         let cornerRadius = self.frame.height / 2
         setTitle(title, for: .normal)
         backgroundColor = bgColor
@@ -42,8 +42,4 @@ final class CustomButton: BaseButton {
         layer.shadowRadius = 10.0
     }
     
-    func addBorder() {
-        self.layer.borderColor = UIColor.white.cgColor
-        self.layer.borderWidth = 2
-    }
 }

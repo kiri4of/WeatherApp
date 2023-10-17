@@ -12,7 +12,7 @@ protocol APIManagerProtocol {
 }
 
 final class APIManger: APIManagerProtocol {
-    var networkManager: NetworkManagerProtocol!
+   private var networkManager: NetworkManagerProtocol
     
     init(networkManager: NetworkManagerProtocol = NetworkManager()) {
         self.networkManager = networkManager
